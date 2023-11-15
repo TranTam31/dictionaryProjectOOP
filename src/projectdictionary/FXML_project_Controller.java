@@ -4,6 +4,9 @@
  */
 package projectdictionary;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -52,13 +55,13 @@ public class FXML_project_Controller implements Initializable {
     private AnchorPane dicForm;
 
     @FXML
-    private TableView<searchModel> dictionaryView;
+    private TableView<word> dictionaryView;
 
     @FXML
     private Label english_showLabel;
 
     @FXML
-    private TableColumn<searchModel, String> english_word;
+    private TableColumn<word, String> english_word;
 
     @FXML
     private Button savedBtn;
@@ -77,111 +80,70 @@ public class FXML_project_Controller implements Initializable {
     private ResultSet result;
     private Statement statement;
     
-//    ObservableList<searchModel> searchModelList = FXCollections.observableArrayList();
-//    @Override
-//    public void initialize(URL url, ResourceBundle rb) {
-//        String selectData = "SELECT english, vietnamese FROM word";
-//        connectDB = database.connectDB();
-//        
-//        try {
-//            Statement statement = connectDB.createStatement();
-//            ResultSet queryOutput = statement.executeQuery(selectData);
-//            
-//            while(queryOutput.next()) {
-//                String english_wordd = queryOutput.getString("english");
-//                String vietnamese_meann = queryOutput.getString("vietnamese");
-//                
-//                
-//                searchModelList.add(new searchModel(english_wordd, vietnamese_meann));
-//            }
-//            
-//            english_word.setCellValueFactory(new PropertyValueFactory<>("englishh"));
-//            vienamese_meaningLabel.setCellValueFactory(new PropertyValueFactory<>("vietnamesee"));
-//            
-//            dictionaryView.setItems(searchModelList);
-//            
-//        } catch (Exception e) {
-//        }
-//    }    
-    public ObservableList<searchModel> myPlansDataList() {
-        ObservableList<searchModel> listData = FXCollections.observableArrayList();
-        String selectData = "SELECT * FROM word";
-        connectDB = database.connectDB();
+    public ObservableList<word> wordList() {
+        ObservableList<word> englishWords = FXCollections.observableArrayList();
+        
+        // Đường dẫn tới file văn bản chứa các từ tiếng Anh
+        String filePath = "C:\\Users\\hahah\\Downloads\\english.txt";
 
-        try {
-            prepare = connectDB.prepareStatement(selectData);
-            result = prepare.executeQuery();
-
-            searchModel pData;
-            while (result.next()) {
-                pData = new searchModel(result.getInt("wordID"),result.getString("english"),result.getString("vietnamese"));
-                listData.add(pData);
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Loại bỏ dấu cách thừa và thêm từ vào ObservableList
+                word wordAdd = new word(line.trim());
+                englishWords.add(wordAdd);
             }
-            
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        return listData;
+        return englishWords;
     }
-
-    private ObservableList<searchModel> myPlansListData;
-
-    public void myPlansShowData() {
-        //chỗ này là hiển thị ra ở chỗ TableView
-        myPlansListData = myPlansDataList();
-        english_word.setCellValueFactory(new PropertyValueFactory<>("englishh"));
-        dictionaryView.setItems(myPlansListData);
+    
+    private ObservableList<word> myWordList;
+    public void myWordListShow() {
+        myWordList = wordList();
+        english_word.setCellValueFactory(new PropertyValueFactory<>("english"));
+        dictionaryView.setItems(myWordList);
         
-        
-        // đoạn này xử lý phần nó search nè
-        FilteredList<searchModel> filteredData = new FilteredList<>(myPlansDataList(), b->true);
+        FilteredList<word> filteredData = new FilteredList<>(wordList(), b->true);
         search_text.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate((searchModel) -> {
+            filteredData.setPredicate((word) -> {
                 if(newValue.isEmpty() || newValue.isBlank() || newValue == null) {
                     return true;
                 }
                 String searchKeyword = newValue.toLowerCase();
-                if(searchModel.getEnglishh().toLowerCase().indexOf(searchKeyword)>-1) {
-                    return true;
-//                } else if(searchModel.getVietnamesee().toLowerCase().indexOf(searchKeyword) > -1) {
+//                if(word.getEnglish().toLowerCase().indexOf(searchKeyword)>-1) {
 //                    return true;
-                }else {
-                    return false;
-                }
+//                }else {
+//                    return false;
+//                }
+                String englishWord = word.getEnglish().toLowerCase();
+                return englishWord.startsWith(searchKeyword);
             });
         });
         
-        SortedList<searchModel> sortedData = new SortedList<>(filteredData);
+        SortedList<word> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(dictionaryView.comparatorProperty());
         dictionaryView.setItems(sortedData);
     }
-
     
-    private int wordId;
-    public void myPlansSelectData() {
+    
+    public void myWordSelect() {
 
-        searchModel pData = dictionaryView.getSelectionModel().getSelectedItem();
+        word wordSelect = dictionaryView.getSelectionModel().getSelectedItem();
         int num = dictionaryView.getSelectionModel().getSelectedIndex();
 
         if ((num - 1) < -1) {
             return;
         }
 
-        wordId = pData.getWordId();
-        String selectData = "SELECT * FROM word WHERE wordID = '"+ wordId +"'";
-        connectDB = database.connectDB();
-        try {
-            prepare = connectDB.prepareStatement(selectData);
-            result = prepare.executeQuery();
-            while(result.next()) {
-                vienamese_meaningLabel.setText(result.getString("vietnamese"));
-                english_showLabel.setText(result.getString("english"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        english_showLabel.setText(wordSelect.getEnglish());
+//        vienamese_meaningLabel.setText(translateDef.getData(wordSelect.getEnglish()).toString());
+        vienamese_meaningLabel.setText("fidasourioeywifuhsiuydiuryeiuyuifysiydr");
     }
-    
+    public void translateAPI() {
+        
+    }
 
     public void switchForm(ActionEvent event) {
 
@@ -213,6 +175,6 @@ public class FXML_project_Controller implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        myPlansShowData();
+        myWordListShow();
     }
 }

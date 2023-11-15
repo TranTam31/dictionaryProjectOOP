@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
@@ -10,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdictionary.FXML_project_Controller">
@@ -54,11 +52,11 @@
                                           <Font name="System Bold" size="37.0" />
                                        </font>
                                     </Label>
-                                    <ScrollPane layoutX="25.0" layoutY="79.0" prefHeight="373.0" prefWidth="435.0" AnchorPane.bottomAnchor="18.399999999999977" AnchorPane.leftAnchor="24.799999999999955" AnchorPane.rightAnchor="12.599999999999966" AnchorPane.topAnchor="79.0">
-                                       <content>
-                                          <VBox prefHeight="446.0" prefWidth="419.0" />
-                                       </content>
-                                    </ScrollPane>
+                                    <Label fx:id="vienamese_meaningLabel" alignment="TOP_LEFT" layoutX="24.0" layoutY="74.4" prefHeight="341.0" prefWidth="393.0" text="Vietnamese Mean" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="74.0">
+                                       <font>
+                                          <Font size="27.0" />
+                                       </font>
+                                    </Label>
                                  </children></AnchorPane>
                            </children>
                         </AnchorPane>

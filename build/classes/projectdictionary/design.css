@@ -1,0 +1,31 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 23 Oct 2023, 9:22:58 am
+    Author     : hahah
+*/
+.topTitle{
+    -fx-background-color: linear-gradient(to bottom right, #ea870e, #ffea00);
+/*    -fx-border-color: #000000;
+    -fx-border-width: 4px;*/
+}
+
+.background{
+    -fx-background-color: linear-gradient(to bottom right, #D7481B, #E48948);
+}
+
+.menu{
+    -fx-background-color: linear-gradient(to bottom right, #00133E, #003CC5);
+    -fx-background-radius: 8px;
+}
+
+.maincontent{
+    -fx-background-color: linear-gradient(to bottom right,  #11839a, #42823d);
+    -fx-background-radius: 8px;
+}
+
+.search{
+    -fx-background-color: #ea870e;
+}
