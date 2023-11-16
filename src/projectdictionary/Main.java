@@ -14,14 +14,14 @@ import javafx.stage.Stage;
  *
  * @author hahah
  */
-public class ProjectDictionary extends Application {
-    
+public class Main extends Application {
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXML_project.fxml"));
-        
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
@@ -32,5 +32,5 @@ public class ProjectDictionary extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

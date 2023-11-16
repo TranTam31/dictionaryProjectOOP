@@ -8,10 +8,10 @@ package projectdictionary;
  *
  * @author hahah
  */
-public class word {
+public class word_old {
     String english;
 
-    public word(String english) {
+    public word_old(String english) {
         this.english = english;
     }
 

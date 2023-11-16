@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package projectdictionary;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URLEncoder;
@@ -157,11 +158,13 @@ public class translateDef {
                     JsonArray meanings = wordObject.getJsonArray("meanings");
                     JsonArray phonetics = wordObject.getJsonArray("phonetics");
 
-                    if(getPhonetic(phonetics) != null) {
-                        Phonenic = getPhonetic(phonetics);
-                    }
-                    if(getAudio(phonetics) != null) {
-                        Audio = getAudio(phonetics);
+                    if(!phonetics.isEmpty()) {
+                        if(getPhonetic(phonetics) != null) {
+                            Phonenic = getPhonetic(phonetics);
+                        }
+                        if(getAudio(phonetics) != null) {
+                            Audio = getAudio(phonetics);
+                        }
                     }
                     JsonArray meanGet = getDef(meanings);
                     for(JsonValue obj : meanGet) {
@@ -173,7 +176,7 @@ public class translateDef {
                 if(Phonenic != null) {
                     result.add("phonetic", Phonenic.getString("phonetic"));
                 } else {
-                    result.add("phonenic", "Từ này hiện chưa cập nhật phiên âm!");
+                    result.add("phonetic", "Từ này hiện chưa cập nhật phiên âm!");
                 }
                 if(Audio != null) {
                     result.add("audio", Audio.getString("audio"));

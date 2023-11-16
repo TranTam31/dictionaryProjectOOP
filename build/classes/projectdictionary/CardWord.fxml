@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="box" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="419.0" style="-fx-background-radius: 15;" styleClass="shadow" stylesheets="@design.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdictionary.CardWordController">
+   <children>
+      <Label fx:id="partOfSpeech" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="253.0" text="Part Of Speech" textAlignment="CENTER">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+      <FlowPane fx:id="defs" prefWidth="584.0" />
+   </children>
+</VBox>
