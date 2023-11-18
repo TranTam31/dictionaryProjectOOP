@@ -24,60 +24,6 @@ import javax.json.JsonValue;
  * @author hahah
  */
 public class translateDef {
-    public static String getMeanVietNam(String input) {
-        String scriptUrl = "https://script.google.com/macros/s/AKfycbxd1TdG3ndXOof5gyKLt_nUAe0YfpPTtDB5XK2NYDkYth9TbLSqlq-2jiy_j-Y-glrC/exec";
-        String source = "en";
-        String target = "vi";
-        String result = null;
-        try {
-            // chuyển input thành một dạng gì đó để truyền vào đường link
-            String encodedInput = URLEncoder.encode(input, StandardCharsets.UTF_8.toString());
-            // gọi đường dẫn
-            String url = scriptUrl + "?source_lang=" + source + "&target_lang=" + target + "&text=" + encodedInput;
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url))
-                    .GET()
-                    .build();
-
-            // Gửi yêu cầu và nhận phản hồi
-            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-
-            if (response.statusCode() == 302) {
-                // Lấy URL chuyển hướng
-                String redirectUrl = response.headers().firstValue("Location").orElse("");
-                if (!redirectUrl.isEmpty()) {
-                    // Tạo yêu cầu HTTP mới cho trang chuyển hướng
-                    HttpRequest redirectRequest = HttpRequest.newBuilder()
-                            .uri(URI.create(redirectUrl))
-                            .GET()
-                            .build();
-                    
-                    // Gửi yêu cầu và nhận phản hồi cho trang chuyển hướng
-                    HttpResponse<String> redirectResponse = HttpClient.newHttpClient().send(redirectRequest, HttpResponse.BodyHandlers.ofString());
-                    
-                    // chuyển kết quả nhận về thành một chuối json.
-                    JsonReader jsonReader = Json.createReader(new StringReader(redirectResponse.body()));
-                    JsonObject jsonResponse = jsonReader.readObject();
-                    
-                    // In kết quả từ trang chuyển hướng
-                    result = jsonResponse.getString("translateText");
-                    
-
-                } else {
-                    System.err.println("URL chuyển hướng không tồn tại.");
-                }
-            } else if (response.statusCode() == 200) {
-                // In kết quả từ Google Apps Script
-                System.out.println("Kết quả từ Google Apps Script: " + response.body());
-            } else {
-                System.err.println("Lỗi trong quá trình gửi yêu cầu.");
-            }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
-    
     public static JsonArray getDef(JsonArray meanings) {
         JsonArrayBuilder meaningArray = Json.createArrayBuilder();
         for(JsonValue meaning : meanings) {
@@ -94,6 +40,9 @@ public class translateDef {
                 }
                 if (definitionObject.containsKey("example")) {
                     definitionxEx.add("example", definitionObject.getString("example"));
+                }
+                else {
+                    definitionxEx.add("example", "Xin lỗi trong trường hợp này chúng tôi chưa tạo ra ví dụ!");
                 }
                 definitionArray.add(definitionxEx);
             }
@@ -193,5 +142,57 @@ public class translateDef {
             e.printStackTrace();
         }
         return result.build();
+    }
+    
+    public static String getMeanVietNam(String input, String source, String target) {
+        String scriptUrl = "https://script.google.com/macros/s/AKfycbxd1TdG3ndXOof5gyKLt_nUAe0YfpPTtDB5XK2NYDkYth9TbLSqlq-2jiy_j-Y-glrC/exec";
+        String result = null;
+        try {
+            // chuyển input thành một dạng gì đó để truyền vào đường link
+            String encodedInput = URLEncoder.encode(input, StandardCharsets.UTF_8.toString());
+            // gọi đường dẫn
+            String url = scriptUrl + "?source_lang=" + source + "&target_lang=" + target + "&text=" + encodedInput;
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .GET()
+                    .build();
+
+            // Gửi yêu cầu và nhận phản hồi
+            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 302) {
+                // Lấy URL chuyển hướng
+                String redirectUrl = response.headers().firstValue("Location").orElse("");
+                if (!redirectUrl.isEmpty()) {
+                    // Tạo yêu cầu HTTP mới cho trang chuyển hướng
+                    HttpRequest redirectRequest = HttpRequest.newBuilder()
+                            .uri(URI.create(redirectUrl))
+                            .GET()
+                            .build();
+                    
+                    // Gửi yêu cầu và nhận phản hồi cho trang chuyển hướng
+                    HttpResponse<String> redirectResponse = HttpClient.newHttpClient().send(redirectRequest, HttpResponse.BodyHandlers.ofString());
+                    
+                    // chuyển kết quả nhận về thành một chuối json.
+                    JsonReader jsonReader = Json.createReader(new StringReader(redirectResponse.body()));
+                    JsonObject jsonResponse = jsonReader.readObject();
+                    
+                    // In kết quả từ trang chuyển hướng
+                    result = jsonResponse.getString("translateText");
+                    
+
+                } else {
+                    System.err.println("URL chuyển hướng không tồn tại.");
+                }
+            } else if (response.statusCode() == 200) {
+                // In kết quả từ Google Apps Script
+                System.out.println("Kết quả từ Google Apps Script: " + response.body());
+            } else {
+                System.err.println("Lỗi trong quá trình gửi yêu cầu.");
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 }

@@ -43,8 +43,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-border-color: #D7D7D7;
 }
 
+.opacityDown{
+    -fx-opacity: 0.6;
+}
+
 .mouse-move:hover{
-    -fx-background-color: #E4E4E4;
+    /*-fx-background-color: #E4E4E4;*/
+    -fx-opacity: 1;
 }
 
 .shadow{
