@@ -110,7 +110,7 @@ public class Def_flowPaneController implements Initializable {
         Text exText = new Text(defxEx.getValue());
         example.getChildren().add(exText);
         translate.setOnAction(e -> {
-            Text meanText = new Text("      Vietnamese: " + getMeanVietNam(defxEx.getKey()));
+            Text meanText = new Text("\nVietnamese: " + getMeanVietNam(defxEx.getKey()) + "\n");
             meaning.getChildren().add(meanText);
         });
     }

@@ -11,21 +11,26 @@
 
 <FlowPane fx:id="flowPaneChild" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@design.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdictionary.Def_flowPaneController">
    <children>
-      <HBox prefHeight="38.0" prefWidth="535.0">
+      <HBox prefWidth="535.0">
          <children>
-            <Label alignment="CENTER" prefHeight="38.0" prefWidth="28.0" text="*">
+            <Label alignment="CENTER" prefWidth="26.0" text="*">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextFlow fx:id="definition" prefHeight="38.0" prefWidth="467.0" />
-            <Button fx:id="translate" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="66.0" prefWidth="40.0" text="Tran" />
+            <TextFlow fx:id="definition" prefWidth="414.0" />
+            <Button fx:id="translate" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="30.0" prefWidth="87.0" styleClass="btn" stylesheets="@design.css" text="Vietnamese" />
          </children>
       </HBox>
-      <TextFlow fx:id="meaning" prefWidth="494.0" />
       <HBox prefWidth="535.0">
          <children>
-            <Label alignment="TOP_LEFT" prefHeight="24.0" prefWidth="154.0" text="       Example:  " />
+            <TextFlow prefWidth="26.0" />
+            <TextFlow fx:id="meaning" prefWidth="416.0" />
+         </children>
+      </HBox>
+      <HBox prefWidth="535.0">
+         <children>
+            <Label alignment="TOP_LEFT" prefHeight="24.0" prefWidth="154.0" text="        Example: " />
             <TextFlow fx:id="example" prefWidth="535.0" />
          </children>
       </HBox>

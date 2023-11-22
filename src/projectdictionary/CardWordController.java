@@ -34,7 +34,7 @@ public class CardWordController implements Initializable {
     @FXML
     private Label partOfSpeech;
 
-    private String[] colors = {"B9E5FF", "BDB2FE", "FB9AA8", "FF5056"};
+    private String[] colors = {"B9E5FF", "BDB2FE", "FB9AA8", "FBD798", "D8FB98", "FBD298"};
 
     public void setData(Word word) {
         partOfSpeech.setText(word.getPartOfSpeech());

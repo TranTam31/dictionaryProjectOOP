@@ -17,8 +17,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .menu{
-    -fx-background-color: linear-gradient(to bottom right, #00133E, #003CC5);
-    -fx-background-radius: 8px;
+    -fx-background-color: linear-gradient(to bottom left, #11839a, #2A7C63);
+    -fx-background-radius: 30px;
+    /*-fx-opacity: 0.6;*/
 }
 
 .maincontent{
@@ -54,4 +55,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .shadow{
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0), 10, 0,0,10);
+}
+
+.custom-button {
+    /* Thuộc tính thay đổi khi rê chuột vào */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+.custom-button:hover {
+    /* Hiệu ứng khi đưa chuột vào */
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.btn{
+    -fx-background-color: linear-gradient(to bottom right, #11839a, #42823d);
+    -fx-background-radius: 5px;
+    -fx-font-size: 13px;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+}
+.btn:hover{
+    -fx-background-color: linear-gradient(to bottom right, #049db8, #469d3c);
 }

@@ -9,6 +9,8 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -23,12 +25,56 @@
                <center>
                   <AnchorPane prefHeight="600.0" prefWidth="1033.0" styleClass="background" stylesheets="@design.css" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="27.8" layoutY="72.8" prefHeight="334.0" prefWidth="121.0" styleClass="menu" stylesheets="@../../../planManagement/src/planmanagement/design.css" AnchorPane.leftAnchor="27.8" AnchorPane.topAnchor="72.8">
+                        <AnchorPane layoutX="28.0" layoutY="72.8" prefHeight="351.0" prefWidth="125.0" styleClass="menu" stylesheets="@../../../planManagement/src/planmanagement/design.css" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="73.0">
                            <children>
-                              <Button fx:id="dicBtn" layoutX="28.0" layoutY="18.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="64.0" prefWidth="62.0" text="Dic" />
-                              <Button fx:id="addBtn" layoutX="28.0" layoutY="97.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="64.0" prefWidth="62.0" text="Add" />
-                              <Button fx:id="apiBtn" layoutX="28.0" layoutY="178.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="64.0" prefWidth="62.0" text="API" />
-                              <Button fx:id="savedBtn" layoutX="28.0" layoutY="256.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="64.0" prefWidth="62.0" text="Saved" />
+                              <Button fx:id="dicBtn" layoutX="19.0" layoutY="15.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="60.0" prefWidth="54.0" stylesheets="@design.css">
+                                 <graphic>
+                                    <ImageView fitHeight="81.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../anhDicionary/book.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="transparent" />
+                                    <String fx:value="custom-button" />
+                                 </styleClass></Button>
+                              <Button fx:id="addBtn" layoutX="23.0" layoutY="106.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="74.0" prefWidth="77.0" stylesheets="@design.css">
+                                 <graphic>
+                                    <ImageView fitHeight="71.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../anhDicionary/addBtn.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="transparent" />
+                                    <String fx:value="custom-button" />
+                                 </styleClass></Button>
+                              <Button fx:id="apiBtn" layoutX="19.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="82.0" prefWidth="86.0" stylesheets="@design.css">
+                                 <graphic>
+                                    <ImageView fitHeight="70.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../anhDicionary/tranBtn.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="transparent" />
+                                    <String fx:value="custom-button" />
+                                 </styleClass></Button>
+                              <Button fx:id="savedBtn" layoutX="22.0" layoutY="261.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="74.0" prefWidth="79.0" stylesheets="@design.css">
+                                 <graphic>
+                                    <ImageView fitHeight="68.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../anhDicionary/saveBtnForm.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="transparent" />
+                                    <String fx:value="custom-button" />
+                                 </styleClass></Button>
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="dicForm" layoutX="170.4" layoutY="71.2" prefHeight="509.0" prefWidth="750.0" styleClass="maincontent" stylesheets="@../../../planManagement/src/planmanagement/design.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="71.0">
@@ -70,8 +116,30 @@
                                           <Font name="System Bold" size="22.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="sound" layoutX="524.0" layoutY="14.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="52.0" text="Sound" AnchorPane.rightAnchor="13.600000000000023" AnchorPane.topAnchor="14.0" />
-                                    <Button fx:id="saveButton" layoutX="465.0" layoutY="14.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="52.0" text="Lưu" visible="false" />
+                                    <Button fx:id="sound" layoutX="524.0" layoutY="14.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="52.0" stylesheets="@design.css" visible="false" AnchorPane.rightAnchor="13.600000000000023" AnchorPane.topAnchor="14.0">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../anhDicionary/soundBtn.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="transparent" />
+                                          <String fx:value="custom-button" />
+                                       </styleClass></Button>
+                                    <Button fx:id="saveButton" layoutX="480.0" layoutY="14.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="52.0" stylesheets="@design.css" visible="false">
+                                       <graphic>
+                                          <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../anhDicionary/saveBtn.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="transparent" />
+                                          <String fx:value="custom-button" />
+                                       </styleClass></Button>
                                     <ScrollPane layoutX="25.0" layoutY="79.0" prefHeight="373.0" prefWidth="435.0" styleClass="transparent" stylesheets="@design.css" AnchorPane.bottomAnchor="18.399999999999977" AnchorPane.leftAnchor="24.799999999999955" AnchorPane.rightAnchor="12.599999999999966" AnchorPane.topAnchor="79.0">
                                        <content>
                                           <VBox fx:id="cardLayout" prefHeight="387.0" prefWidth="535.0" spacing="5.0" styleClass="transparent" stylesheets="@design.css" />
@@ -82,47 +150,101 @@
                         </AnchorPane>
                         <AnchorPane fx:id="addForm" layoutX="255.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0" styleClass="maincontent" stylesheets="@design.css" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="55.200000000000045" AnchorPane.topAnchor="71.0">
                            <children>
-                              <Label layoutX="28.0" layoutY="20.0" text="Thêm từ mới" textFill="WHITE" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="20.0">
+                              <AnchorPane layoutX="14.0" layoutY="66.0" prefHeight="426.0" prefWidth="302.0" styleClass="search" stylesheets="@design.css" />
+                              <Label layoutX="18.4" layoutY="7.0" text="Học từ theo cách của bạn" textFill="WHITE" AnchorPane.leftAnchor="18.4" AnchorPane.topAnchor="7.0">
                                  <font>
                                     <Font name="System Bold" size="38.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="204.0" layoutY="95.0" prefHeight="52.0" prefWidth="549.0" promptText="English Word" AnchorPane.leftAnchor="204.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="95.0">
+                              <TextField fx:id="english_add" layoutX="24.8" layoutY="116.6" prefHeight="31.0" prefWidth="246.0" promptText="English Word" AnchorPane.leftAnchor="24.8" AnchorPane.rightAnchor="572.8" AnchorPane.topAnchor="116.6">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
                               </TextField>
-                              <TextArea layoutX="204.0" layoutY="166.0" prefHeight="268.0" prefWidth="468.0" promptText="hãy nhập nghĩa tiếng Việt ở đây" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="204.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="166.0" />
-                              <Button layoutX="228.0" layoutY="450.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="135.0" text="Add" AnchorPane.bottomAnchor="22.799999999999955" AnchorPane.leftAnchor="204.0" />
-                              <Label layoutX="24.8" layoutY="98.4" prefHeight="39.0" prefWidth="179.0" text="English Word" textFill="WHITE" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="571.0" AnchorPane.topAnchor="98.0">
+                              <TextArea fx:id="vietnamese_add" layoutX="25.0" layoutY="222.4" prefHeight="206.0" prefWidth="277.0" promptText="hãy nhập nghĩa tiếng Việt ở đây" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="573.0" AnchorPane.topAnchor="222.0">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </TextArea>
+                              <Button fx:id="addWord_btn" layoutX="25.0" layoutY="444.0" mnemonicParsing="false" onAction="#myPlansAddBtn" prefHeight="36.0" prefWidth="279.0" styleClass="btn" stylesheets="@design.css" text="Add" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="25.0" />
+                              <Label layoutX="27.2" layoutY="78.2" prefHeight="39.0" prefWidth="97.0" text="English" AnchorPane.leftAnchor="27.2" AnchorPane.rightAnchor="750.4" AnchorPane.topAnchor="78.2">
                                  <font>
                                     <Font name="System Bold" size="27.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="24.8" layoutY="159.0" prefHeight="39.0" prefWidth="177.0" text="Vietnamese" textFill="WHITE" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="572.0" AnchorPane.topAnchor="159.0">
+                              <Label layoutX="27.2" layoutY="183.8" prefHeight="39.0" prefWidth="159.0" text="Vietnamese" AnchorPane.leftAnchor="27.2" AnchorPane.rightAnchor="688.8" AnchorPane.topAnchor="183.8">
                                  <font>
                                     <Font name="System Bold" size="27.0" />
                                  </font>
                               </Label>
+                              <AnchorPane layoutX="339.0" layoutY="65.0" prefHeight="426.0" prefWidth="518.0" styleClass="search" stylesheets="@design.css" />
+                              <TableView fx:id="add_TableView" layoutX="352.0" layoutY="116.0" onMouseClicked="#myPlansSelectData" prefHeight="311.0" prefWidth="494.0">
+                                <columns>
+                                  <TableColumn fx:id="addEnglish_col" prefWidth="173.59994506835938" text="English" />
+                                  <TableColumn fx:id="addVietnamese_col" prefWidth="320.0000366210937" text="Vietnamese" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <Button fx:id="update_btn" layoutX="352.0" layoutY="444.0" mnemonicParsing="false" onAction="#myPlansUpdateBtn" prefHeight="36.0" prefWidth="135.0" styleClass="btn" stylesheets="@design.css" text="Update" />
+                              <Button fx:id="delete_btn" layoutX="531.0" layoutY="444.0" mnemonicParsing="false" onAction="#myPlansDeleteBtn" prefHeight="36.0" prefWidth="135.0" styleClass="btn" stylesheets="@design.css" text="Delete" />
+                              <Button fx:id="clear_btn" layoutX="710.0" layoutY="444.0" mnemonicParsing="false" onAction="#myPlansClearBtn" prefHeight="36.0" prefWidth="135.0" styleClass="btn" stylesheets="@design.css" text="Clear" />
+                              <TextField fx:id="search_word_add" layoutX="352.0" layoutY="79.0" prefHeight="30.0" prefWidth="174.0" promptText="Search" styleClass="round-layout" stylesheets="@design.css" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="apiForm" prefHeight="200.0" prefWidth="200.0" styleClass="maincontent" stylesheets="@../../../planManagement/src/planmanagement/design.css" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="170.4" AnchorPane.rightAnchor="55.200000000000045" AnchorPane.topAnchor="71.2">
+                        <AnchorPane fx:id="apiForm" prefHeight="200.0" prefWidth="200.0" styleClass="maincontent" stylesheets="@../../../planManagement/src/planmanagement/design.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="170.4" AnchorPane.rightAnchor="55.200000000000045" AnchorPane.topAnchor="71.2">
                            <children>
-                              <TextArea fx:id="inputAPI" layoutX="45.0" layoutY="90.0" prefHeight="374.0" prefWidth="350.0" wrapText="true">
+                              <AnchorPane layoutX="25.0" layoutY="73.0" prefHeight="410.0" prefWidth="387.0" styleClass="search" stylesheets="@design.css" />
+                              <Label layoutX="26.0" layoutY="18.0" text="Google Translate" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="38.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="460.0" layoutY="73.0" prefHeight="410.0" prefWidth="387.0" styleClass="search" stylesheets="@design.css" />
+                              <TextArea fx:id="inputAPI" layoutX="45.0" layoutY="131.0" prefHeight="333.0" prefWidth="350.0" promptText="Nhập văn bản" wrapText="true">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </TextArea>
-                              <TextArea fx:id="outputAPI" layoutX="468.0" layoutY="90.4" prefHeight="374.0" prefWidth="350.0" wrapText="true" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="90.0">
+                              <TextArea fx:id="outputAPI" layoutX="468.0" layoutY="128.8" prefHeight="335.0" prefWidth="350.0" promptText="Bản dịch" wrapText="true" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="129.0">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </TextArea>
-                              <ComboBox fx:id="chooseLan_input" layoutX="45.0" layoutY="52.0" onAction="#chooseLan_input" prefHeight="35.0" prefWidth="188.0" promptText="Choose Language" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="52.0" />
-                              <ComboBox fx:id="chooseLan_output" layoutX="479.0" layoutY="52.0" onAction="#chooseLan_input" prefHeight="35.0" prefWidth="188.0" promptText="Choose Language" AnchorPane.rightAnchor="207.39999999999998" AnchorPane.topAnchor="52.0" />
-                              <Button fx:id="speak_input" layoutX="239.0" layoutY="52.0" mnemonicParsing="false" onAction="#chooseLan_input" prefHeight="34.0" prefWidth="38.0" text="Button" />
-                              <Button fx:id="speak_output" layoutX="673.0" layoutY="52.0" mnemonicParsing="false" onAction="#chooseLan_input" prefHeight="34.0" prefWidth="38.0" text="Button" />
-                           </children></AnchorPane>
+                              <ComboBox fx:id="chooseLan_input" layoutX="44.8" layoutY="87.4" onAction="#chooseLan_input" prefHeight="35.0" prefWidth="188.0" promptText="Choose Language" styleClass="white-background" stylesheets="@design.css" AnchorPane.leftAnchor="44.8" AnchorPane.topAnchor="87.4" />
+                              <ComboBox fx:id="chooseLan_output" layoutX="479.20000000000005" layoutY="87.4" onAction="#chooseLan_input" prefHeight="35.0" prefWidth="188.0" promptText="Choose Language" styleClass="white-background" stylesheets="@design.css" AnchorPane.rightAnchor="207.19999999999993" AnchorPane.topAnchor="87.4" />
+                              <Button fx:id="speak_input" layoutX="234.0" layoutY="88.0" mnemonicParsing="false" onAction="#chooseLan_input" prefHeight="34.0" prefWidth="38.0" stylesheets="@design.css" visible="false">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../anhDicionary/soundBtn.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="transparent" />
+                                    <String fx:value="custom-button" />
+                                 </styleClass></Button>
+                              <Button fx:id="speak_output" layoutX="668.0" layoutY="87.0" mnemonicParsing="false" onAction="#chooseLan_input" prefHeight="34.0" prefWidth="38.0" stylesheets="@design.css">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../anhDicionary/soundBtn.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="transparent" />
+                                    <String fx:value="custom-button" />
+                                 </styleClass></Button>
+                              <ImageView fx:id="check_image" fitHeight="47.0" fitWidth="43.0" layoutX="414.0" layoutY="81.0" opacity="0.19" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../anhDicionary/check.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
                         <AnchorPane fx:id="savedForm" layoutX="174.0" layoutY="74.0" prefHeight="509.0" prefWidth="750.0" styleClass="maincontent" stylesheets="@../../../planManagement/src/planmanagement/design.css" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="170.4" AnchorPane.rightAnchor="55.200000000000045" AnchorPane.topAnchor="71.2">
                            <children>
                               <AnchorPane layoutX="19.2" layoutY="19.2" prefHeight="470.0" prefWidth="230.0" styleClass="search" stylesheets="@../../../planManagement/src/planmanagement/design.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="19.0">
@@ -163,8 +285,30 @@
                                           <Font name="System Bold" size="22.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="sound1" layoutX="524.0" layoutY="14.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="52.0" text="Sound" AnchorPane.rightAnchor="13.600000000000023" AnchorPane.topAnchor="14.0" />
-                                    <Button fx:id="saveButton1" layoutX="465.0" layoutY="14.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="52.0" text="Bỏ lưu" visible="false" />
+                                    <Button fx:id="sound1" layoutX="524.0" layoutY="14.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="52.0" stylesheets="@design.css" visible="false" AnchorPane.rightAnchor="13.600000000000023" AnchorPane.topAnchor="14.0">
+                                       <graphic>
+                                          <ImageView fitHeight="39.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../anhDicionary/soundBtn.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="custom-button" />
+                                          <String fx:value="transparent" />
+                                       </styleClass></Button>
+                                    <Button fx:id="saveButton1" layoutX="484.0" layoutY="14.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="52.0" stylesheets="@design.css" visible="false">
+                                       <graphic>
+                                          <ImageView fitHeight="54.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../anhDicionary/unsaveBtn.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="transparent" />
+                                          <String fx:value="custom-button" />
+                                       </styleClass></Button>
                                     <ScrollPane layoutX="25.0" layoutY="79.0" prefHeight="373.0" prefWidth="435.0" styleClass="transparent" stylesheets="@design.css" AnchorPane.bottomAnchor="18.399999999999977" AnchorPane.leftAnchor="24.799999999999955" AnchorPane.rightAnchor="12.599999999999966" AnchorPane.topAnchor="79.0">
                                        <content>
                                           <VBox fx:id="cardLayout1" prefHeight="387.0" prefWidth="535.0" spacing="5.0" styleClass="transparent" stylesheets="@design.css" />
