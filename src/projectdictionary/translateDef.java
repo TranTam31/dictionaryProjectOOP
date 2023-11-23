@@ -195,4 +195,32 @@ public class translateDef {
         }
         return result;
     }
+    
+//    public static String getOneDef(JsonArray meanings) {
+////        JsonArrayBuilder meaningArray = Json.createArrayBuilder();
+//        for(JsonValue meaning : meanings) {
+//            JsonObjectBuilder meaningObject = Json.createObjectBuilder();
+//            JsonObject mean = (JsonObject) meaning;
+//            meaningObject.add("partOfSpeech", mean.getString("partOfSpeech"));
+//            JsonArray definitions = mean.getJsonArray("definitions");
+//            JsonArrayBuilder definitionArray = Json.createArrayBuilder();
+//            for(JsonValue definition : definitions) {
+//                JsonObject definitionObject = (JsonObject) definition;
+//                JsonObjectBuilder definitionxEx = Json.createObjectBuilder();
+//                if (definitionObject.containsKey("definition")) {
+//                    definitionxEx.add("definition", definitionObject.getString("definition"));
+//                }
+//                if (definitionObject.containsKey("example")) {
+//                    definitionxEx.add("example", definitionObject.getString("example"));
+//                }
+//                else {
+//                    definitionxEx.add("example", "Xin lỗi trong trường hợp này chúng tôi chưa tạo ra ví dụ!");
+//                }
+//                definitionArray.add(definitionxEx);
+//            }
+//            meaningObject.add("definitionArray", definitionArray);
+//            meaningArray.add(meaningObject);
+//        }
+//        return 
+//    }
 }

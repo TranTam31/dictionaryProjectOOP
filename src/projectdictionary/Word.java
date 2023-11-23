@@ -6,7 +6,7 @@ import javafx.util.Pair;
 
 /**
  *
- * @author hassssss
+ * @author hasssssss
  */
 public class Word {
     private String partOfSpeech;
