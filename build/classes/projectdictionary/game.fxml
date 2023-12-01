@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="476.0" prefWidth="746.0" styleClass="background" stylesheets="@design.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdictionary.GameController">
+    <children>
+        <Text fx:id="text" fill="#fff842" layoutX="50.0" layoutY="94.0" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="327.99999999999994">
+            <font>
+                <Font name="Calibri" size="39.0" />
+            </font>
+        </Text>
+      <Text fx:id="hint" fill="#fff800" layoutX="50.0" layoutY="137.0" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="327.99999999999994">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="pillar" fitHeight="348.0" fitWidth="275.0" layoutX="438.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../anhDicionary/pillar.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rope" fitHeight="167.0" fitWidth="162.0" layoutX="508.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../anhDicionary/rope.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="head" fitHeight="141.0" fitWidth="89.0" layoutX="531.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../anhDicionary/head.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="shirt" fitHeight="215.0" fitWidth="149.0" layoutX="493.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../anhDicionary/shirt.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pants" fitHeight="115.0" fitWidth="87.0" layoutX="527.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../anhDicionary/pants.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="right_hand" fitHeight="109.0" fitWidth="89.0" layoutX="592.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../anhDicionary/right_hand.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="left_hand" fitHeight="113.0" fitWidth="75.0" layoutX="470.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../anhDicionary/left_hand.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="left_leg" fitHeight="94.0" fitWidth="67.0" layoutX="519.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../anhDicionary/left_leg.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="right_leg" fitHeight="94.0" fitWidth="67.0" layoutX="560.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../anhDicionary/right_leg.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Winner" fitHeight="245.0" fitWidth="283.0" layoutX="447.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../anhDicionary/correct.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Win_new_game" focusTraversable="false" layoutX="483.0" layoutY="264.0" mnemonicParsing="false" onAction="#newWord" prefHeight="50.0" prefWidth="117.0" style="-fx-background-color: pink;" text="New Word" visible="false">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="Game_Over" fitHeight="319.0" fitWidth="272.0" layoutX="440.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../anhDicionary/wrong.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Lose_new_game" focusTraversable="false" layoutX="484.0" layoutY="264.0" mnemonicParsing="false" onAction="#newWord" prefHeight="50.0" prefWidth="117.0" style="-fx-background-color: pink;" text="New Word" visible="false">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="Exit1" focusTraversable="false" layoutX="484.0" layoutY="321.0" mnemonicParsing="false" onAction="#Exit" prefHeight="0.0" prefWidth="117.0" style="-fx-background-color: pink;" text="Exit" visible="false">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+        <FlowPane fx:id="buttons" hgap="7.0" layoutX="50.0" layoutY="262.0" prefHeight="188.0" prefWidth="328.0" vgap="7.0">
+            <children>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="A">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="19.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="B">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="C">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="D">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="E">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="F">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="G">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="H">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="I">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="J">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="K">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="L">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="M">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="N">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="O">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="P">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="Q">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="R">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="S">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="T">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font>
+            </Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="U">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+            <Button focusTraversable="false" layoutX="199.0" layoutY="152.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="transparent" stylesheets="@design.css">
+               <font>
+                  <Font name="HP Simplified Hans Regular" size="18.0" />
+               </font>
+            </Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="V">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="W">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="16.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="X">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="Y">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#onClick" prefHeight="40.0" prefWidth="40.0" styleClass="btnanpha" stylesheets="@design.css" text="Z">
+                    <font>
+                        <Font name="HP Simplified Hans Regular" size="18.0" />
+                    </font></Button>
+            </children>
+        </FlowPane>
+      <Label fx:id="mark" layoutX="13.0" layoutY="14.0" prefHeight="26.0" prefWidth="149.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="newGameInit" focusTraversable="false" layoutX="156.0" layoutY="300.0" mnemonicParsing="false" onAction="#newGameInit" prefHeight="83.0" prefWidth="194.0" style="-fx-background-color: pink;" text="New Game" visible="false">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitGame" focusTraversable="false" layoutX="396.0" layoutY="300.0" mnemonicParsing="false" onAction="#Exit" prefHeight="83.0" prefWidth="194.0" style="-fx-background-color: pink;" text="Exit" visible="false">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Label fx:id="chucmung" layoutX="214.0" layoutY="49.0" prefHeight="65.0" prefWidth="328.0" text="Xin chúc mừng" textAlignment="CENTER" visible="false" wrapText="true">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <Label fx:id="bandaonhet" layoutX="263.0" layoutY="113.0" prefHeight="11.0" prefWidth="230.0" text="Bạn đã ôn tập hết số từ" textAlignment="CENTER" visible="false" wrapText="true">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="diemso" contentDisplay="CENTER" layoutX="263.0" layoutY="149.0" prefHeight="11.0" prefWidth="230.0" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="bancomuon" layoutX="214.0" layoutY="243.0" prefHeight="65.0" prefWidth="328.0" text="Bạn có muốn ôn tập lần nữa?" textAlignment="CENTER" visible="false" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+    </children>
+</Pane>

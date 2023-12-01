@@ -196,31 +196,33 @@ public class translateDef {
         return result;
     }
     
-//    public static String getOneDef(JsonArray meanings) {
-////        JsonArrayBuilder meaningArray = Json.createArrayBuilder();
-//        for(JsonValue meaning : meanings) {
-//            JsonObjectBuilder meaningObject = Json.createObjectBuilder();
-//            JsonObject mean = (JsonObject) meaning;
-//            meaningObject.add("partOfSpeech", mean.getString("partOfSpeech"));
-//            JsonArray definitions = mean.getJsonArray("definitions");
-//            JsonArrayBuilder definitionArray = Json.createArrayBuilder();
-//            for(JsonValue definition : definitions) {
-//                JsonObject definitionObject = (JsonObject) definition;
-//                JsonObjectBuilder definitionxEx = Json.createObjectBuilder();
-//                if (definitionObject.containsKey("definition")) {
-//                    definitionxEx.add("definition", definitionObject.getString("definition"));
-//                }
-//                if (definitionObject.containsKey("example")) {
-//                    definitionxEx.add("example", definitionObject.getString("example"));
-//                }
-//                else {
-//                    definitionxEx.add("example", "Xin lỗi trong trường hợp này chúng tôi chưa tạo ra ví dụ!");
-//                }
-//                definitionArray.add(definitionxEx);
-//            }
-//            meaningObject.add("definitionArray", definitionArray);
-//            meaningArray.add(meaningObject);
-//        }
-//        return 
-//    }
+    public static String getOneDef(String input) {
+        String scriptUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+        String defFirst = null;
+        try {
+            String url = scriptUrl + input;
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .GET()
+                    .build();
+
+            // Gửi yêu cầu và nhận phản hồi
+            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 200) {
+                JsonReader jsonReader = Json.createReader(new StringReader(response.body()));
+                JsonArray wordArray = jsonReader.readArray();
+                JsonObject wordObject = wordArray.getJsonObject(0);
+                JsonArray meanings = wordObject.getJsonArray("meanings");
+                JsonObject mean = meanings.getJsonObject(0);
+                JsonArray definitions = mean.getJsonArray("definitions");
+                JsonObject firstObject = definitions.getJsonObject(0);
+                defFirst = firstObject.getString("definition");
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return defFirst;
+    }
+    
 }

@@ -8,8 +8,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 */
 .topTitle{
     -fx-background-color: linear-gradient(to bottom right, #ea870e, #ffea00);
-/*    -fx-border-color: #000000;
-    -fx-border-width: 4px;*/
 }
 
 .background{
@@ -78,4 +76,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 .btn:hover{
     -fx-background-color: linear-gradient(to bottom right, #049db8, #469d3c);
+}
+
+.btnanpha{
+    -fx-background-color: #F3D611;
+    -fx-border-color: #FE4602;
+    -fx-border-width: 2px;
+    -fx-background-radius: 200px;
+    -fx-border-radius: 15px;
 }

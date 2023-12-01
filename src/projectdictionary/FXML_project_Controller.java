@@ -51,6 +51,8 @@ import java.util.Map;
 import java.util.Optional;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
@@ -59,6 +61,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.json.JsonArray;
 import javax.json.JsonValue;
@@ -85,18 +88,19 @@ public class FXML_project_Controller implements Initializable {
     private Button savedBtn;
     @FXML
     private AnchorPane savedForm;
+    @FXML
+    private Button game_btn;
+    
     
     // Từ điển Form
     public ObservableList<word_old> wordList() {
         ObservableList<word_old> englishWords = FXCollections.observableArrayList();
 
-        // Đường dẫn tới file văn bản chứa các từ tiếng Anh
         String filePath = "C:\\Users\\hahah\\Downloads\\tonghop.txt";
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                // Loại bỏ dấu cách thừa và thêm từ vào ObservableList
                 word_old wordAdd = new word_old(line.trim());
                 englishWords.add(wordAdd);
             }
@@ -211,6 +215,7 @@ public class FXML_project_Controller implements Initializable {
         }
     }
 
+    
     //Add Form
     @FXML
     private TextField english_add;
@@ -285,14 +290,14 @@ public class FXML_project_Controller implements Initializable {
                 alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error Message");
                 alert.setHeaderText(null);
-                alert.setContentText("Please select the item first");
+                alert.setContentText("Hãy chọn một từ để cập nhật!");
                 alert.showAndWait();
             } else {
                 alert = new Alert(AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation Message");
                 alert.setHeaderText(null);
-                alert.setContentText("Are you sure you want to UPDATE Plan: "
-                        + english_add.getText());
+                alert.setContentText("Bạn có muốn cập nhật từ: '" 
+                        + english_add.getText() + "' không?");
                 Optional<ButtonType> option = alert.showAndWait();
 
                 if (option.get().equals(ButtonType.OK)) {
@@ -310,21 +315,10 @@ public class FXML_project_Controller implements Initializable {
                         prepare = connect.prepareStatement(updateData);
                         prepare.executeUpdate();
 
-                        alert = new Alert(AlertType.INFORMATION);
-                        alert.setTitle("Information Message");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Successfully Updated!");
-                        alert.showAndWait();
 
                         myPlansShowData();
                         myPlansClearBtn();
                     }
-                } else {
-                    alert = new Alert(AlertType.ERROR);
-                    alert.setTitle("Information Message");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Cancelled!");
-                    alert.showAndWait();
                 }
             }
         } catch (Exception e) {
@@ -339,14 +333,14 @@ public class FXML_project_Controller implements Initializable {
                 alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Error Message");
                 alert.setHeaderText(null);
-                alert.setContentText("Please select the item first");
+                alert.setContentText("Hãy chọn một từ để xóa!");
                 alert.showAndWait();
             } else {
                 alert = new Alert(AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation Message");
                 alert.setHeaderText(null);
-                alert.setContentText("Are you sure you want to DELETE Plan: "
-                        + english_add.getText());
+                alert.setContentText("Bạn có muốn xóa từ: '" 
+                        + english_add.getText() + "' không?");
                 Optional<ButtonType> option = alert.showAndWait();
 
                 if (option.get().equals(ButtonType.OK)) {
@@ -360,21 +354,10 @@ public class FXML_project_Controller implements Initializable {
                         prepare = connect.prepareStatement(deleteData);
                         prepare.executeUpdate();
 
-                        alert = new Alert(AlertType.INFORMATION);
-                        alert.setTitle("Information Message");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Successfully Deleted!");
-                        alert.showAndWait();
 
                         myPlansShowData();
                         myPlansClearBtn();
                     }
-                } else {
-                    alert = new Alert(AlertType.ERROR);
-                    alert.setTitle("Information Message");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Cancelled!");
-                    alert.showAndWait();
                 }
             }
         } catch (Exception e) {
@@ -751,10 +734,25 @@ public class FXML_project_Controller implements Initializable {
             phonetic1.setText("Phonetic");
             sound1.setVisible(false);
             saveButton1.setVisible(false);
+        } else if(event.getSource() == game_btn) {
+            try {
+                openNewWindow();
+            } catch (IOException ex) {
+                Logger.getLogger(FXML_project_Controller.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-
     }
 
+    private void openNewWindow() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("game.fxml"));
+        Scene scene = new Scene(root);
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Hangman - học từ đã lưu");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         myWordListShow();

@@ -25,7 +25,7 @@
                <center>
                   <AnchorPane prefHeight="600.0" prefWidth="1033.0" styleClass="background" stylesheets="@design.css" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="28.0" layoutY="72.8" prefHeight="351.0" prefWidth="125.0" styleClass="menu" stylesheets="@design.css" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="73.0">
+                        <AnchorPane layoutX="28.0" layoutY="72.8" prefHeight="434.0" prefWidth="126.0" styleClass="menu" stylesheets="@design.css" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="73.0">
                            <children>
                               <Button fx:id="dicBtn" layoutX="19.0" layoutY="15.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="60.0" prefWidth="54.0" stylesheets="@design.css">
                                  <graphic>
@@ -51,9 +51,9 @@
                                     <String fx:value="transparent" />
                                     <String fx:value="custom-button" />
                                  </styleClass></Button>
-                              <Button fx:id="apiBtn" layoutX="19.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="82.0" prefWidth="86.0" stylesheets="@design.css">
+                              <Button fx:id="apiBtn" layoutX="18.0" layoutY="270.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="82.0" prefWidth="86.0" stylesheets="@design.css">
                                  <graphic>
-                                    <ImageView fitHeight="70.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="82.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../anhDicionary/tranBtn.png" />
                                        </image>
@@ -63,9 +63,9 @@
                                     <String fx:value="transparent" />
                                     <String fx:value="custom-button" />
                                  </styleClass></Button>
-                              <Button fx:id="savedBtn" layoutX="22.0" layoutY="261.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="74.0" prefWidth="79.0" stylesheets="@design.css">
+                              <Button fx:id="savedBtn" layoutX="12.0" layoutY="193.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="85.0" prefWidth="98.0" stylesheets="@design.css">
                                  <graphic>
-                                    <ImageView fitHeight="68.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="74.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../anhDicionary/saveBtnForm.png" />
                                        </image>
@@ -75,9 +75,22 @@
                                     <String fx:value="transparent" />
                                     <String fx:value="custom-button" />
                                  </styleClass></Button>
+                              <Button fx:id="game_btn" layoutX="14.0" layoutY="338.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="91.0" prefWidth="92.0" stylesheets="@design.css">
+                                 <graphic>
+                                    <ImageView fitHeight="83.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../anhDicionary/game.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="transparent" />
+                                    <String fx:value="custom-button" />
+                                 </styleClass>
+                              </Button>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="dicForm" layoutX="170.4" layoutY="71.2" prefHeight="509.0" prefWidth="750.0" styleClass="maincontent" stylesheets="@design.css" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="71.0">
+                        <AnchorPane fx:id="dicForm" layoutX="170.4" layoutY="71.2" prefHeight="509.0" prefWidth="750.0" styleClass="maincontent" stylesheets="@design.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="71.0">
                            <children>
                               <AnchorPane layoutX="19.2" layoutY="19.2" prefHeight="470.0" prefWidth="229.0" styleClass="search" stylesheets="@design.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="19.0">
                                  <children>
@@ -245,7 +258,7 @@
                               </ImageView>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="savedForm" layoutX="174.0" layoutY="74.0" prefHeight="509.0" prefWidth="750.0" styleClass="maincontent" stylesheets="@design.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="170.4" AnchorPane.rightAnchor="55.200000000000045" AnchorPane.topAnchor="71.2">
+                        <AnchorPane fx:id="savedForm" layoutX="174.0" layoutY="74.0" prefHeight="509.0" prefWidth="750.0" styleClass="maincontent" stylesheets="@design.css" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="170.4" AnchorPane.rightAnchor="55.200000000000045" AnchorPane.topAnchor="71.2">
                            <children>
                               <AnchorPane layoutX="19.2" layoutY="19.2" prefHeight="470.0" prefWidth="230.0" styleClass="search" stylesheets="@design.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="19.0">
                                  <children>

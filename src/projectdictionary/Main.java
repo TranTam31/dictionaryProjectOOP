@@ -21,7 +21,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXML_project.fxml"));
 
         Scene scene = new Scene(root);
-
+        stage.setTitle("Dictionary - Develop by Tâm&Quang");
         stage.setScene(scene);
         stage.show();
     }
